@@ -2,7 +2,6 @@ package com.mariaeduarda.projetocurso.model;
 
 public class Pessoa {
 
-   // Pessoa PessoaController;//
     private String primeiroNome;
     private String sobrenome;
     private String telefone;
@@ -14,7 +13,6 @@ public class Pessoa {
         this.sobrenome = sobrenome;
         this.telefone = telefone;
         this.cursoDesejado = cursoDesejado;
-
     }
     public String getPrimeiroNome() {
         return primeiroNome;
@@ -39,11 +37,9 @@ public class Pessoa {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
     public String getCursoDesejado() {
         return cursoDesejado;
     }
-
     public void setCursoDesejado(String cursoDesejado) {
         this.cursoDesejado = cursoDesejado;
     }

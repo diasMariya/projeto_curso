@@ -18,15 +18,14 @@ import com.mariaeduarda.projetocurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-  Pessoa pessoa;
+    Pessoa pessoa;
+    EditText Curso;
+    EditText Sobrenome;
+    EditText PrimeiroNome;
+    EditText Telefone;
 
-    EditText Curso ;
-    EditText Sobrenome ;
-    EditText PrimeiroNome ;
-    EditText Telefone ;
-
-    Button btnLimpar ;
-    Button btnSalvar ;
+    Button btnLimpar;
+    Button btnSalvar;
     Button btnFinalizar;
 
 
@@ -40,17 +39,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        //instância//
         pessoa = new Pessoa();
 
         pessoa.setPrimeiroNome("Maria Eduarda");
         pessoa.setSobrenome("Dos Santos");
         pessoa.setCursoDesejado("JavaScrip");
         pessoa.setTelefone("000000000");
-
-
-        int parada = 0;
 
         PrimeiroNome = findViewById(R.id.editPrimeiroNome);
         Sobrenome = findViewById(R.id.editSobrenome);
@@ -65,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         Telefone.setText(pessoa.getTelefone());
         Curso.setText(pessoa.getCursoDesejado());
 
-
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,9 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Telefone.setText(" ");
                 Curso.setText(" ");
             }
-
         });
-
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,12 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefone(Telefone.getText().toString());
                 pessoa.setCursoDesejado(Curso.getText().toString());
 
-                Toast.makeText(MainActivity.this, "Dados salvos!", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(MainActivity.this, "Dados salvos: " + pessoa.toString(), Toast.LENGTH_SHORT).show();
             }
-
         });
-
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,10 +86,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //salvar os treco//
-    //  SharedPreferences sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE);
-    //  SharedPreferences.Editor editor = sharedPref.edit();
-    // editor.putString("PrimeiroNome", pessoa.getPrimeiroNome());
-    // editor.apply();
-
 }
