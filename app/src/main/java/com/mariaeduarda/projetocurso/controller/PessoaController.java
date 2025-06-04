@@ -1,8 +1,12 @@
 package com.mariaeduarda.projetocurso.controller;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import ndroidx.annotation.StringDef;a
 
 import com.mariaeduarda.projetocurso.model.Pessoa;
 
@@ -19,5 +23,10 @@ public class PessoaController {
     }
 }
 
+
+    public void salvar(Pessoa pessoa) {
+        Log.d("MVC_Controller", "Salvo: "+ pessoa.toString());
+    }
+}
 
 

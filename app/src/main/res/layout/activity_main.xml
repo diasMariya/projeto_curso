@@ -61,6 +61,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.179" />
 
+    <EditText
+        android:id="@+id/editTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_telefone_de_contato"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -80,7 +99,6 @@
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:onClick="limpar"
         android:text="@string/txt_button_limpar"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +115,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:onClick="salvar"
         android:text="@string/txt_button_salvar"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,7 +128,6 @@
         android:id="@+id/btnFinalizar"
         android:layout_width="292dp"
         android:layout_height="52dp"
-        android:onClick="setBtnFinalizar"
         android:text="@string/txt_button_finalizar"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,22 +137,5 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSalvar"
         app:layout_constraintVertical_bias="0.406" />
 
-    <EditText
-        android:id="@+id/editTelefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_telefone_de_contato"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
