@@ -13,12 +13,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.mariaeduarda.projetocurso.R;
+import com.mariaeduarda.projetocurso.controller.PessoaController;
 import com.mariaeduarda.projetocurso.model.Pessoa;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    Pessoa pessoa;
+    Pessoa pcessoontroller_mv
+    PessoaController control
     EditText Curso;
     EditText Sobrenome;
     EditText PrimeiroNome;
@@ -40,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         pessoa = new Pessoa();
+        controller = new PessoaController();
+        controller.toString();
+
+
 
         pessoa.setPrimeiroNome("Maria Eduarda");
         pessoa.setSobrenome("Dos Santos");
@@ -74,9 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setPrimeiroNome(PrimeiroNome.getText().toString());
                 pessoa.setSobrenome(Sobrenome.getText().toString());
                 pessoa.setTelefone(Telefone.getText().toString());
-                pessoa.setCursoDesejado(Curso.getText().toString());
-
-                Toast.makeText(MainActivity.this, "Dados salvos: " + pessoa.toString(), Toast.LENGTH_SHORT).show();
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
