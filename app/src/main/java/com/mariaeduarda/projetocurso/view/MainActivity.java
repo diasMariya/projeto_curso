@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
   Pessoa pessoa;
   PessoaController controller;
-=======
-    Pessoa pcessoontroller_mv
-    PessoaController control
     EditText Curso;
     EditText Sobrenome;
     EditText PrimeiroNome;
