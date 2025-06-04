@@ -19,9 +19,8 @@ import com.mariaeduarda.projetocurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
-    Pessoa pessoa;
-    PessoaController controller;
-
+    Pessoa pcessoontroller_mv
+    PessoaController control
     EditText Curso;
     EditText Sobrenome;
     EditText PrimeiroNome;
@@ -81,11 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setPrimeiroNome(PrimeiroNome.getText().toString());
                 pessoa.setSobrenome(Sobrenome.getText().toString());
                 pessoa.setTelefone(Telefone.getText().toString());
-                pessoa.setCursoDesejado(Curso.getText().toString());
-
-                Toast.makeText(MainActivity.this, "Dados salvos: " + pessoa.toString(), Toast.LENGTH_SHORT).show();
-
-                controller.salvar(pessoa);
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
