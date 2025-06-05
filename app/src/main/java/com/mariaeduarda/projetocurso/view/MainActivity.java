@@ -1,10 +1,13 @@
 package com.mariaeduarda.projetocurso.view;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -50,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
 
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", "NA")); //Se caso não for encontrado o primeiro nome, com o NA vai aparecer que não foi encontrado.
+        pessoa.setSobrenome(preferences.getString("sobrenome", "NA"));
+        pessoa.setCursoDesejado(preferences.getString("cursoDesejado", "NA"));
+        pessoa.setTelefone(preferences.getString("telefone", "NA"));
+
         controller = new PessoaController();
 
         controller.toString();
@@ -77,14 +85,12 @@ public class MainActivity extends AppCompatActivity {
                 Curso.setText(" ");
             }
         });
-
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 pessoa.setPrimeiroNome(PrimeiroNome.getText().toString());
                 pessoa.setSobrenome(Sobrenome.getText().toString());
                 pessoa.setTelefone(Telefone.getText().toString());
-
                 pessoa.setCursoDesejado(Curso.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados salvos!" + pessoa.toString(), Toast.LENGTH_SHORT).show();
@@ -97,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
                 controller.salvar(pessoa);
             }
+
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
