@@ -23,6 +23,8 @@ import com.mariaeduarda.projetocurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
+
+    SharedPreferences.Editor listaVip;
     public static final String NOME_PREFERENCES = "pref_listaVip";
     SharedPreferences preferences;
     PessoaController controller;
@@ -49,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+         listaVip = preferences.edit();
+
 
         pessoa = new Pessoa();
 
@@ -61,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         controller = new PessoaController();
 
         controller.toString();
-
 
         PrimeiroNome = findViewById(R.id.editPrimeiroNome);
         Sobrenome = findViewById(R.id.editSobrenome);
@@ -83,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 Sobrenome.setText(" ");
                 Telefone.setText(" ");
                 Curso.setText(" ");
+
+                listaVip.clear();
+                listaVip.apply();
             }
         });
         btnSalvar.setOnClickListener(new View.OnClickListener() {
